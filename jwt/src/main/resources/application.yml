@@ -20,6 +20,12 @@ spring:
         show_sql: true
     defer-datasource-initialization: true
 
+jwt:
+  header: Authorization
+  # HS512 need more than 64bytes secret key
+  secret: Z3JlZW5nb29zZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQtZ3JlZW5nb29zZS10ZWNoLXNwcmluZy1ib290LWp3dC1oZWxsb29vby1ib29vb2sK
+  token-validity-in-seconds: 86400
+
 logging:
   level:
     com.example: DEBUG
