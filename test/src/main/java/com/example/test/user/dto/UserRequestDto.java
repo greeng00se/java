@@ -2,8 +2,10 @@ package com.example.test.user.dto;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class UserRequestDto {
 
     private String name;

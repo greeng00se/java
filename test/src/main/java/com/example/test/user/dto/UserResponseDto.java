@@ -3,8 +3,10 @@ package com.example.test.user.dto;
 import com.example.test.user.User;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class UserResponseDto {
 
     private Long id;
