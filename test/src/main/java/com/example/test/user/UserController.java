@@ -21,7 +21,7 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping
-    public ResponseEntity<Long> signUp(@RequestBody UserRequestDto request) {
+    public ResponseEntity<UserResponseDto> signUp(@RequestBody UserRequestDto request) {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(userService.signUp(request));
     }

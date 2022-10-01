@@ -14,13 +14,12 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    public Long signUp(UserRequestDto request) {
+    public UserResponseDto signUp(UserRequestDto request) {
         User user = User.builder()
                 .name(request.getName())
                 .age(request.getAge())
                 .build();
-        User savedUser = userRepository.save(user);
-        return savedUser.getId();
+        return UserResponseDto.from(userRepository.save(user));
     }
 
     public List<UserResponseDto> findAll() {

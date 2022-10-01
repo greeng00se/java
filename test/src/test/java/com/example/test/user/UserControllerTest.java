@@ -17,13 +17,11 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.LongStream;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -51,7 +49,7 @@ class UserControllerTest {
                 .name("hello")
                 .age(10L)
                 .build();
-        Mockito.doReturn(1L).when(userService)
+        Mockito.doReturn(new UserResponseDto(1L, "hello", 10L)).when(userService)
                 .signUp(Mockito.any(UserRequestDto.class));
 
         String json = new Gson().toJson(request);
@@ -65,7 +63,9 @@ class UserControllerTest {
 
         // then
         result.andExpect(status().isCreated())
-                .andExpect(content().bytes("1".getBytes(StandardCharsets.UTF_8)));
+                .andExpect(jsonPath("id", 1L).exists())
+                .andExpect(jsonPath("name", request.getName()).exists())
+                .andExpect(jsonPath("age", request.getAge()).exists());
     }
 
     @Test
