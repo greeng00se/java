@@ -32,3 +32,15 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+// jar file 생성하지 않도록 설정
+tasks.bootJar {
+    enabled = false
+}
+
+// 기본값은 true xxx-plain.jar 생성 -> plain은 dependency 포함하지 않음
+tasks.jar {
+    enabled = true
+}
+
+// ./gradlew clean :module-api:buildNeeded --stacktrace --info --refresh-dependencies -x test
