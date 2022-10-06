@@ -1,5 +1,6 @@
 package com.example.moduleapi.controller;
 
+import com.example.moduleapi.response.CommonResponse;
 import com.example.moduleapi.service.HelloService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,5 +20,10 @@ public class HelloController {
     @GetMapping("/find")
     public String find() {
         return helloService.find();
+    }
+
+    @GetMapping("/exception")
+    public String exception() {
+        return helloService.exception();
     }
 }
