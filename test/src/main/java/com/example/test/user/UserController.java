@@ -20,6 +20,11 @@ public class UserController {
 
     private final UserService userService;
 
+    @GetMapping("/hello")
+    public String hello() {
+        return "hello";
+    }
+
     @PostMapping
     public ResponseEntity<UserResponseDto> signUp(@RequestBody UserRequestDto request) {
         return ResponseEntity.status(HttpStatus.CREATED)
