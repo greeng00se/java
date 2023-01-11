@@ -1,7 +1,7 @@
-package com.example.simplejava.pattern.ch01;
+package com.example.simplejava.pattern.ch01_strategy;
 
-import com.example.simplejava.pattern.ch01.fly.FlyWithWings;
-import com.example.simplejava.pattern.ch01.quack.Quack;
+import com.example.simplejava.pattern.ch01_strategy.fly.FlyWithWings;
+import com.example.simplejava.pattern.ch01_strategy.quack.Quack;
 
 public class MiniDuckSimulator {
 

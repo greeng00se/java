@@ -1,4 +1,4 @@
-package com.example.simplejava.pattern.ch01.fly;
+package com.example.simplejava.pattern.ch01_strategy.fly;
 
 public class FlyWithWings implements FlyBehavior {
     @Override

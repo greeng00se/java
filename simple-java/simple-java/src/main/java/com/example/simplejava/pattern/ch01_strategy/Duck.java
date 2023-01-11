@@ -1,7 +1,7 @@
-package com.example.simplejava.pattern.ch01;
+package com.example.simplejava.pattern.ch01_strategy;
 
-import com.example.simplejava.pattern.ch01.fly.FlyBehavior;
-import com.example.simplejava.pattern.ch01.quack.QuackBehavior;
+import com.example.simplejava.pattern.ch01_strategy.fly.FlyBehavior;
+import com.example.simplejava.pattern.ch01_strategy.quack.QuackBehavior;
 
 public abstract class Duck {
 
